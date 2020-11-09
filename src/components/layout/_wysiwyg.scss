@@ -1,0 +1,55 @@
+@import "../../common-sass/styles.scss";
+
+.wysiwyg {
+  @include paragraph-size();
+  hyphens: auto;
+  li {
+    @include paragraph-size();
+  }
+  p,
+  h1,
+  h2,
+  h3,
+  h4 {
+    margin: 0;
+    padding: 0 0 20px;
+    line-height: 1.6;
+  }
+  a {
+    color: $purple;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+  img {
+    max-width: 100%;
+  }
+  ul.thumb-icon {
+    padding: 0;
+    list-style-type: none;
+    li {
+      display: flex;
+      margin-bottom: 35px;
+      color: #474747;
+      img {
+        margin-right: 30px;
+        min-width: 41px;
+        max-height: 41px;
+      }
+    }
+  }
+  &.small-headers {
+    h2 {
+      font-size: 32px;
+      line-height: 36px;
+      @include bp(m) {
+        font-size: 60px;
+        line-height: 70px;
+      }
+    }
+  }
+  .hyphenate {
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+  }
+}

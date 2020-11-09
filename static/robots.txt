@@ -1,0 +1,11 @@
+Sitemap: https://www.contentstack.com/sitemap-main.xml 
+Sitemap: https://www.contentstack.com/docs/sitemap.xml
+
+User-Agent: *
+Allow: /
+Disallow: /blog/search
+Noindex: /blog/search
+Disallow: /blog/search*
+Noindex: /blog/search*
+Disallow: /thank-you
+Noindex: /thank-you

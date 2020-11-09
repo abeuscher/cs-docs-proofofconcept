@@ -1,0 +1,42 @@
+$bps:(xs: 320px, s:640px, m:1024px, l:1320px);
+
+//colors
+$black:#000;
+$white:#fff;
+$off-white:#f7f8fb;
+$near-white:#f7f7f7;
+$off-black:#031921;
+$gray:#cccccc;
+$medium-gray:#999999;
+$text-gray:#444444;
+$text-light-gray:#474747;
+$dark-gray:#282535;
+$light-gray:#bfbfbf;
+$lighter-gray:#d8d8d8;
+$foggy-gray:#f3f2f5;
+$pink:#b64d71;
+$orange:#eb5646;
+$purple:#5a20b9;
+$medium-purple:#7c4dff;
+$dark-purple:#2a0f57;
+$yellow: #ffc11c;
+$violet-fog:#f9f5ff;
+$fuschia:#af375e;
+$old-purple:#6824ab;
+$blurple:#3c3462;
+$dark-blurple:#2c2744;
+$body-bg-color:$white;
+
+$body-text-color:$text-gray;
+$body-link-color:$text-gray;
+$body-link-hover-color:$off-black;
+
+//fonts
+$body-font:'Inter',sans-serif;
+$nav-font:'Inter',sans-serif;
+$header-font:'Montserrat', sans-serif;
+
+$gutter-width:50px;
+
+$cta-bar-height:40px;
+$cta-bar-bg:$dark-gray;

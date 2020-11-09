@@ -1,0 +1,241 @@
+@import "../../common-sass/styles.scss";
+@import "../../common-sass/icons.scss";
+@import "./button";
+@import "./wysiwyg";
+
+body {
+  font-family: $body-font;
+  background: $body-bg-color;
+  color: $body-text-color;
+  position: relative;
+  min-height: 100vh;
+}
+a {
+  text-decoration: none;
+  color: $body-link-color;
+  &:hover {
+    color: $body-link-hover-color;
+  }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: $header-font;
+  letter-spacing: -1px;
+  margin: 0;
+  font-weight: 600;
+}
+p {
+  @include paragraph-size();
+  &.header-copy {
+    font-family: $header-font;
+  }
+}
+main {
+  h1 {
+    font-size: 40px;
+    line-height: 48px;
+    @include bp(s) {
+      font-size: 48px;
+      line-height: 52px;
+    }
+    @include bp(m) {
+      font-size: 60px;
+      line-height: 70px;
+    }
+  }
+  h2 {
+    font-size: 32px;
+    line-height: 36px;
+    @include bp(s) {
+      font-size: 36px;
+      line-height: 42px;
+    }
+    @include bp(m) {
+      font-size: 45px;
+      line-height: 50px;
+    }
+  }
+  h3 {
+    font-size: 20px;
+    line-height: 24px;
+    @include bp(s) {
+      font-size: 24px;
+      line-height: 28px;
+    }
+    @include bp(m) {
+      font-size: 28px;
+      line-height: 32px;
+    }
+  }
+  h4 {
+    font-size: 16px;
+    line-height: 18px;
+    font-weight: 400;
+    @include bp(s) {
+      font-size: 18px;
+      line-height: 20px;
+    }
+    @include bp(m) {
+      font-size: 24px;
+      line-height: 28px;
+    }
+  }
+  &.text-scale-large {
+    h1 {
+      font-size: 60px;
+      line-height: 60px;
+      @include bp(m) {
+        font-size: 80px;
+        line-height: 80px;
+      }
+    }
+    h2 {
+      font-size: 48px;
+      line-height: 52px;
+      @include bp(m) {
+        font-size: 60px;
+        line-height: 70px;
+      }
+    }
+    h3 {
+      font-size: 36px;
+      line-height: 42px;
+      @include bp(m) {
+        font-size: 45px;
+        line-height: 50px;
+      }
+    }
+    h4 {
+      font-size: 24px;
+      line-height: 28px;
+      font-weight: 400;
+      @include bp(m) {
+        font-size: 30px;
+        line-height: 40px;
+      }
+    }
+  }
+  display: block;
+  h2 {
+    margin-bottom: $gutter-width/2;
+  }
+}
+.max-width {
+  width: 85%;
+  max-width: 85%;
+  margin: 0 auto;
+  @include bp(l) {
+    max-width: 1280px;
+    &.narrow {
+      max-width: 960px;
+    }
+    &.wicked-narrow {
+      max-width: 450px;
+    }
+  }
+}
+.interior {
+  padding-top: 200px;
+  text-align: center;
+  background: black;
+  color: white;
+  padding-bottom: 50px;
+  margin-bottom: 30vh;
+}
+.centered {
+  text-align: center;
+}
+.big-text {
+  @include bp(m) {
+    font-size: 1.5em;
+  }
+}
+.purple-text {
+  color: $purple;
+}
+.dark-purple-text {
+  color: $dark-purple;
+}
+
+.light-section {
+  &:before {
+    content: "";
+    display: block;
+    background: $dark-purple;
+    height: 100px;
+    width: 100%;
+    @include bp(m) {
+      height: 80px;
+    }
+  }
+}
+.flex {
+  @include bp(m) {
+    display: flex;
+    flex-wrap: wrap;
+    .col-full {
+      flex-basis: 100%;
+    }
+    .col-half {
+      flex-basis: 50%;
+    }
+    .col-quarter {
+      flex-basis: 25%;
+    }
+    .col-three-quarter {
+      flex-basis: 75%;
+    }
+    .col-third {
+      flex-basis: 33.3%;
+    }
+    .col-two-third {
+      flex-basis: 66.6%;
+    }
+  }
+}
+
+.padding-top {
+  padding-top: $gutter-width;
+  @include bp(m) {
+    padding-top: $gutter-width * 2;
+  }
+  &.short {
+    padding-top: $gutter-width/2;
+    @include bp(m) {
+      padding-top: $gutter-width;
+    }
+  }
+}
+.padding-bottom {
+  padding-bottom: $gutter-width;
+  @include bp(m) {
+    padding-bottom: $gutter-width * 2;
+  }
+  &.short {
+    padding-bottom: $gutter-width/2;
+    @include bp(m) {
+      padding-bottom: $gutter-width;
+    }
+  }
+}
+.padding-both {
+  padding-top: $gutter-width;
+  padding-bottom: $gutter-width;
+  @include bp(m) {
+    padding-top: $gutter-width * 2;
+    padding-bottom: $gutter-width * 2;
+  }
+  &.short {
+    padding-top: $gutter-width/2;
+    padding-bottom: $gutter-width/2;
+    @include bp(m) {
+      padding-top: $gutter-width;
+      padding-bottom: $gutter-width;
+    }
+  }
+}

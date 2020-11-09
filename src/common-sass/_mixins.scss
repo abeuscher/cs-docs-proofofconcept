@@ -1,0 +1,115 @@
+@mixin nice-transition() {
+  transition: 0.4s cubic-bezier(0.335, 0.815, 0.47, 1);
+}
+
+@mixin list-to-menu($ul-margin: 0, $ul-padding: 0) {
+  list-style: none;
+  margin: $ul-margin;
+  padding: $ul-padding;
+  li {
+    display: inline-block;
+  }
+}
+
+@mixin bp($bp, $clamp: false, $prop: "min-width") {
+  $queries: ();
+  @each $bp-name, $bp-value in $bps {
+    $map-2: (#{$bp-name}: $bp-value);
+    $queries: map-merge($queries, $map-2);
+  }
+
+  $bp-width: map-get($queries, $bp);
+  $keys: map-keys($queries);
+  $bp-index: index($keys, $bp);
+  $next-bp: if(length($keys) > $bp-index, nth($keys, $bp-index + 1), null);
+  $prev-bp: if($bp-index > 1, nth($keys, $bp-index - 1), null);
+
+  @if $clamp and $prop == "min-width" and $next-bp {
+    @media only screen
+				and (min-width: #{$bp-width})
+				and (max-width: #{map-get($queries, $next-bp)}) {
+      @content;
+    }
+  } @else if $clamp and $prop == "max-width" and $prev-bp {
+    @media only screen
+				and (max-width: #{$bp-width})
+				and (min-width: #{map-get($queries, $prev-bp)}) {
+      @content;
+    }
+  } @else {
+    @media only screen and (#{$prop}: #{$bp-width}) {
+      @content;
+    }
+  }
+}
+
+@mixin marketo-form() {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100% !important;
+  > .mktoFormRow {
+    width: 100%;
+    height: 100%;
+  }
+  fieldset.mktoFormCol {
+    border: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    > .mktoFormRow {
+      flex-basis: 100%;
+    }
+    legend {
+      font-size: 2em;
+      font-weight: bold;
+      font-family: $header-font;
+      margin-bottom: $gutter-width/2;
+    }
+  }
+  .mktoFieldWrap {
+    flex-basis: 90%;
+    margin-bottom: $gutter-width/2;
+  }
+  .mktoAsterix {
+    display: none;
+  }
+  .mktoGutter,
+  .mktoHasWidth {
+    width: inherit !important;
+  }
+  select,
+  input[type="text"],
+  input[type="email"],
+  input[type="tel"],
+  textarea,
+  label {
+    width: 90% !important;
+    padding: 0.5em;
+    margin-top: 0.5em;
+    &.mktoHasWidth {
+      width: 90% !important;
+      padding: 0.5em;
+      margin-top: 0.5em;
+    }
+  }
+
+  label {
+    text-transform: initial;
+  }
+  textarea#Contact_Us__c {
+    width: 95% !important;
+  }
+}
+@mixin centered-thumb($background-size:contain) {
+  background-position:center;
+  background-repeat:no-repeat;
+  background-size:$background-size;
+}
+@mixin paragraph-size() {
+  font-size: 16px;
+  line-height: 1.4;
+  @include bp(m) {
+    font-size:20px;
+  }
+}
