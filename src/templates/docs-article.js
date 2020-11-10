@@ -9,20 +9,28 @@ import Layout from "../components/layout/layout"
 import HowToGuide from "../components/how-to-guide/how-to-guide"
 import ArticleTextSection from "../components/article-text-section/article-text-section"
 
-const DocsArticle = ({ pageContext }) => {
+const blockMap = {
+  "how_to_guide": HowToGuide,
+  "text_section": ArticleTextSection
+}
+let pageSections = []
+const DocsArticle = ({ pageContext }) => { 
+
+  //Ieerate through modular block content type.
+  pageContext.article_content.forEach((block, counter) => {
+
+    //Iterate through Block Types.
+    Object.keys(blockMap).forEach((blockType) => {
+
+      // Check for a match in Block Types. If present, add section to page after passing it the block props.
+      if (block[blockType]) {
+        pageSections.push(React.createElement(blockMap[blockType],{ key: "block-" + counter, data: block[blockType] },null))
+      }
+    })
+  })
   return (
     <Layout>
-      {pageContext.article_content.map((block, idx) => {
-        if (block["how_to_guide"]!==null) {
-          return (<HowToGuide key={"block-"+idx} data={block["how_to_guide"]} />)
-        }
-        else if (block["text_section"]!==null) {
-          return (<ArticleTextSection key={"block-"+idx} data={block["text_section"]} />)
-        }
-        else {
-          return null
-        }
-      })}
+      {pageSections}
     </Layout>
   )
 }
