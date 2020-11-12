@@ -1,0 +1,67 @@
+@import "../../../common-sass/styles.scss";
+
+.home-hero {
+    background: linear-gradient(90deg, #6222b2, #da4331);
+    color: $white;
+    text-align: center;
+    h1 {
+        padding-top: 80px;
+        font-size: 35px;
+    }
+    .wrapper-search {
+        position: relative;
+        display: inline-block;
+        width: 90%;
+        max-width: 500px;
+        margin:$gutter-width/2 auto;
+        .icon-search {
+            position: absolute;
+            left: 20px;
+            top: 15px;
+            font-size: 30px;
+            color:$white;
+        }
+        input {
+            width: 100%;
+            outline: none;
+            border: 0;
+
+            padding: 20px 45px;
+            border-radius: 50px;
+            box-sizing: border-box;
+            color: #f3f3f3;
+            opacity: 0.75;
+            font-size: 18px;
+            font-weight: 400;
+            text-indent: 20px;
+            @include nice-transition();
+            &:focus {
+                opacity: 1;
+                color: $text-gray;
+                &::placeholder {
+                    color: $light-gray;
+                }
+                ~ .icon-search {
+                    color: $text-gray;
+                }
+            }
+        }
+
+    }
+    p {
+        strong,
+        a {
+            margin-right: 0.25em;
+        }
+        a {
+            border-bottom: transparent 1px solid;
+            @include nice-transition();
+        }
+    }
+    a {
+        color: $white;
+        &:hover {
+            border-bottom-color: $white;
+        }
+    }
+}

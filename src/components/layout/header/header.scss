@@ -1,0 +1,49 @@
+@import "../../../common-sass/styles.scss";
+
+header.page-header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    color: $white;
+
+    .notification-bar {
+        background: $black;
+        .max-width {
+            justify-content: flex-end;
+            display: flex;
+            align-items: center;
+            a {
+                color: $white;
+                padding: 3px 8px;
+                line-height: 2;
+                display: inline-block;
+                &:hover {
+                    color: $gray;
+                }
+            }
+        }
+    }
+    .main-nav {
+        background: $dark-purple;
+        .max-width {
+            display: flex;
+            align-items: center;
+            height: 70px;
+            .wrapper-logo {
+                display: block;
+                flex: 0 0 160px;
+                img {
+                    width: 100%;
+                }
+            }
+            .wrapper-search {
+                flex: 1 1 100%;
+                text-align: center;
+            }
+        }
+    }
+}
+.homepage header.page-header .main-nav {
+    background: transparent;
+}

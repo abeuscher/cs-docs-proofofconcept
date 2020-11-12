@@ -1,0 +1,26 @@
+@import "../../common-sass/styles.scss";
+
+.jump-nav {
+    h3 {
+        margin-bottom:$gutter-width/2;
+    }
+    a {
+        color:$purple;
+    }
+    ul {
+        list-style:none;
+        margin:0;
+        padding:0;
+    }
+    li {
+        border-left:2px solid $gray;
+        text-indent:1em;
+        line-height:2;
+    }
+    .level-one {
+        
+    }
+    .level-two {
+        padding-left:1em;
+    }
+}

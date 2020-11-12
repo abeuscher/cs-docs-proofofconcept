@@ -45,21 +45,21 @@ const buildPageQuery = `query csBuildPageQuery {
         url
         article_content {
           text_section {
-            add_to_jump_nav
-            jump_nav_label
+            add_to_nav
+            nav_label
             headline
             content
           }          
           how_to_guide {
             overview {
-              add_to_jump_nav
-              jump_nav_label
+              add_to_nav
+              nav_label
               headline
               content
             }
             steps {
-              add_to_jump_nav
-              jump_nav_label
+              add_to_nav
+              nav_label
               headline
               content
             }

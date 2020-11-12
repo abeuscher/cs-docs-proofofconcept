@@ -239,3 +239,12 @@ main {
     }
   }
 }
+.docs-page {
+  display:flex;
+}
+.col-left, .col-right {
+  flex-basis:25%;
+}
+.col-middle {
+  flex-basis:50%;
+}
