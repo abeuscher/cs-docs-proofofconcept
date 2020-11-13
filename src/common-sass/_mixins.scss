@@ -107,9 +107,6 @@
   background-size:$background-size;
 }
 @mixin paragraph-size() {
-  font-size: 16px;
+  font-size: 18px;
   line-height: 1.4;
-  @include bp(m) {
-    font-size:20px;
-  }
 }
