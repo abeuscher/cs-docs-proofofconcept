@@ -4,7 +4,7 @@ import CsSmartLink from "../../common/helpers/contentstack-smart-link"
 
 import "./home-hero.scss"
 
-export default function Footer() {
+export default function HomeHero() {
   const data = useStaticQuery(graphql`
     query HomeHeroQuery {
       csDocsHome {
@@ -29,7 +29,7 @@ export default function Footer() {
           <span className="icon-search"></span>
         </div>
         <p><strong>{data.csDocsHome.hero.popular_articles_headline}</strong>
-          {data.csDocsHome.hero.popular_articles.map((article, idx) => (<CsSmartLink href={article.url}>{article.label}</CsSmartLink>))}
+          {data.csDocsHome.hero.popular_articles.map((article, idx) => (<CsSmartLink key={"pop-link"+idx} href={article.url}>{article.label}</CsSmartLink>))}
         </p>
       </div>
     </div>

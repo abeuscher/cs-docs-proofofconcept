@@ -36,6 +36,15 @@ module.exports = {
       }
     },
     {
+      resolve: `gatsby-remark-highlights`,
+      options: {
+          scopePrefix: 'syntax--',
+          codeWrap: {
+            className: 'midnight'
+          }
+        }
+    },
+    {
       resolve: 'gatsby-plugin-react-svg',
       options: {
         rule: {

@@ -9,7 +9,7 @@ export default class DocsArticleContent extends Component {
 
     blockMap = {
         "how_to_guide": HowToGuide,
-        "text_section": ArticleTextSection
+        "article_section": ArticleTextSection
     }
 
     render() {
@@ -37,6 +37,7 @@ export default class DocsArticleContent extends Component {
                         <p>Left Nav</p>
                     </div>
                     <div className="col-middle">
+                        <h2>{this.props.data.title}</h2>
                         <article className="docs-article">
                             {pageSections}
                         </article>

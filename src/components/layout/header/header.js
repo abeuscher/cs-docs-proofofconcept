@@ -26,9 +26,12 @@ export default function Header({ homeToggle }) {
   return (
     <header className="page-header">
       <div className="notification-bar">
-        <div className="max-width">
+        <div className="dropdown-bucket">
+          <select><option>Venus</option><option>Legacy</option></select>
+        </div>
+        <div className="nav-bucket">
           <nav>
-            {data.csHeader.notification_bar.links.map((link, idx) => (<CsSmartLink kay={"utility-link=" + idx} href={link.url}>{link.label}</CsSmartLink>))}
+            {data.csHeader.notification_bar.links.map((link, idx) => (<CsSmartLink key={"utility-link=" + idx} href={link.url}>{link.label}</CsSmartLink>))}
           </nav>
         </div>
       </div>

@@ -44,26 +44,9 @@ const buildPageQuery = `query csBuildPageQuery {
         title
         url
         article_content {
-          text_section {
-            add_to_nav
-            nav_label
-            headline
+          article_section {
             content
-          }          
-          how_to_guide {
-            overview {
-              add_to_nav
-              nav_label
-              headline
-              content
-            }
-            steps {
-              add_to_nav
-              nav_label
-              headline
-              content
-            }
-          }
+          }         
         }
         metadata {
           page_title

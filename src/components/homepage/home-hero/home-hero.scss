@@ -1,7 +1,8 @@
 @import "../../../common-sass/styles.scss";
 
 .home-hero {
-    background: linear-gradient(90deg, #6222b2, #da4331);
+    //background: linear-gradient(90deg, #6222b2, #da4331);
+    background:$dark-purple;
     color: $white;
     text-align: center;
     h1 {

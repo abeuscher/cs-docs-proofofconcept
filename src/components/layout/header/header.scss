@@ -9,20 +9,32 @@ header.page-header {
 
     .notification-bar {
         background: $black;
-        .max-width {
-            justify-content: flex-end;
+        height:40px;
             display: flex;
             align-items: center;
+            padding:0 40px;
+            .dropdown-bucket {
+                flex:0 0 120px;
+                select {
+                    background:$black;
+                    color:$white;
+                    border:none;
+                    outline:none;
+                }
+            }
+            .nav-bucket {
+                flex:1 1 100%;
+                text-align: right;
+            }
             a {
                 color: $white;
                 padding: 3px 8px;
-                line-height: 2;
                 display: inline-block;
+                font-size:.8em;
                 &:hover {
                     color: $gray;
                 }
             }
-        }
     }
     .main-nav {
         background: $dark-purple;
